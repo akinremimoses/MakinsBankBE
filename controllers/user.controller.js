@@ -4,6 +4,11 @@ const User = require('../models/User');
 const Transaction = require('../models/Transaction');
 const sendEmail = require('../utils/senEmail');
 
+function generateAccountNumber() {
+  const randomNumber = Math.floor(100000 + Math.random() * 900000);
+  return 'MAK' + randomNumber;
+}
+
 // Register user
 exports.register = async (req, res) => {
   try {
