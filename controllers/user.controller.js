@@ -21,13 +21,13 @@ exports.register = async (req, res) => {
     // 2. Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // 3. Create user object (ensure accountNumber and balance are handled properly)
+    // 3. Create user object 
     user = new User({
       name,
       email,
       password: hashedPassword,
-      accountNumber: generateAccountNumber(), // Make sure this exists
-      balance: 0 // or any default value
+      accountNumber: generateAccountNumber(), 
+      balance: 10000 
     });
 
     // 4. Save user to DB
