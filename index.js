@@ -13,7 +13,7 @@ app.use(cors());
 
 
 
-// Connect to MongoDB (using cloud URI from .env)
+// Connect to MongoDB
 mongoose.connect(process.env.DATABASE_URI)
 .then(() => console.log('MongoDB (Atlas) connected'))
 .catch(err => console.error('MongoDB connection error:', err));
